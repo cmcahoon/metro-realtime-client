@@ -18,8 +18,8 @@ program
     .description("list agencies")
     .action(function(options) {
         models.agency.list()
-        .spread((agencies) => {
-            console.log(prettyjson.render(agencies))
+        .then((agency) => {
+            console.log(prettyjson.render(agency))
         })
     })
 
@@ -27,7 +27,8 @@ program
     .command("routes <agency>")
     .description("list routes for a specific agency")
     .action(function(agency, options) {
-        models.route.list(agency)
+        models.agency.get(agency)
+        .then((agency) => agency.routes())
         .spread((routes) => {
             console.log(prettyjson.render(routes))
         })
