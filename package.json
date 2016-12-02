@@ -1,0 +1,27 @@
+{
+  "name": "metro-realtime-client",
+  "version": "1.0.0",
+  "description": "Basic JS client for LA's Metro Realtime APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwongprice/metro-realtime-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwongprice/metro-realtime-client/issues"
+  },
+  "homepage": "https://github.com/cwongprice/metro-realtime-client#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "bunyan": "^1.8.5",
+    "commander": "^2.9.0",
+    "prettyjson": "^1.2.1",
+    "superagent": "^3.1.0",
+    "superagent-bluebird-promise": "^4.1.0"
+  }
+}
