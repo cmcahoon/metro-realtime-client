@@ -1,40 +1,28 @@
-"use strict"
+'use strict'
 
-const baseURL = require("../constants").baseEndpointURL
-let request = require("../request")
+const _ = require('lodash')
+const baseURL = require('../constants').baseEndpointURL
+let request = require('../request')
 let models = {
-    agency: require("./agency"),
-    route: require("./route"),
-    stop: require("./stop"),
-    vehicle: require("./vehicle")
+    route: require('./route'),
+    vehicle: require('./vehicle')
 }
 
 
-class Agency {
-
-    constructor(id, name) {
-        this.id = id
-        this.name = name
-    }
-
-    routes() {
-        return models.route.list(this.id)
-    }
-
-}
- 
-
-function toAgency(obj) {
-    return new Agency(obj.id, obj.display_name)
+function extend(agency) {
+    return _(agency)
+        .set('routes', models.route.list)
+        .set('vehicles', _.bind(models.vehicle.list, null, agency.id))
+        .value()
 }
 
 
 exports.list = function() {
     return request
-        .get(baseURL + "/agencies/")
+        .get(baseURL + '/agencies/')
         .promise()
         .then(request.callback.onResponse)
-        .spread(toAgency)
+        .spread(extend)
         .catch(request.callback.onError)
 }
 
@@ -45,7 +33,7 @@ exports.get = function(id) {
     return exports.list()
     .then((agency) => {
         if (agency.id != id) 
-            return Promise.reject("requested agency does not exist")
+            return Promise.reject('requested agency does not exist')
         return Promise.resolve(agency)
     })
 }

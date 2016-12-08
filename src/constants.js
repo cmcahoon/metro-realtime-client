@@ -1,4 +1,4 @@
 'use strict'
 
 
-exports.baseEndpointURL = "http://api.metro.net"
+exports.baseEndpointURL = 'http://api.metro.net'

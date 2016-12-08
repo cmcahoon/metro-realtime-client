@@ -1,7 +1,7 @@
-"use strict"
+'use strict'
 
-let Promise = require("./promise")
-let request = require("superagent-bluebird-promise")
+let Promise = require('./promise')
+let request = require('superagent-bluebird-promise')
 
 
 let onResponse = function(res) {
