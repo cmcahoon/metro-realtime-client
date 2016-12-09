@@ -5,7 +5,7 @@ let request = require('superagent-bluebird-promise')
 
 
 let onResponse = function(res) {
-    return Promise.resolve([ res.body, res ])
+    return Promise.resolve(res.body)
 }
 
 

@@ -9,20 +9,11 @@ let models = {
 }
 
 
-function extend(agency) {
-    return _(agency)
-        .set('routes', models.route.list)
-        .set('vehicles', _.bind(models.vehicle.list, null, agency.id))
-        .value()
-}
-
-
 exports.list = function() {
     return request
         .get(baseURL + '/agencies/')
         .promise()
         .then(request.callback.onResponse)
-        .spread(extend)
         .catch(request.callback.onError)
 }
 
