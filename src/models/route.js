@@ -1,12 +1,57 @@
 'use strict'
 
 const _ = require('lodash')
+const Promise = require('bluebird')
 let request = require('../request')
 let baseURL = require('../constants').baseEndpointURL
-let models = {
-    stop: require('./stop'),
+
+// helpers
+
+function getInfo(agencyId, routeId) {
+    return request
+        .get(baseURL + '/agencies/' + agencyId + '/routes/' + routeId + '/')
+        .promise()
+        .then(request.callback.onResponse)
+        .catch(request.callback.onError)
 }
 
+function getStops(agencyId, routeId) {
+    return request
+        .get(baseURL + '/agencies/' + agencyId + '/routes/' + routeId + '/stops/')
+        .promise()
+        .then(request.callback.onResponse)
+        .catch(request.callback.onError)
+}
+
+function getStopSequence(agencyId, routeId) {
+    return request
+        .get(baseURL + '/agencies/' + agencyId + '/routes/' + routeId + '/sequence/')
+        .promise()
+        .then(request.callback.onResponse)
+        .catch(request.callback.onError)
+}
+
+function getRuns(agencyId, routeId) {
+    return request
+        .get(baseURL + '/agencies/' + agencyId + '/routes/' + routeId + '/runs/')
+        .promise()
+        .then(request.callback.onResponse)
+        .catch(request.callback.onError)
+}
+
+
+// transformers
+
+function merge(info, stops, stopSequence, runs) {
+    return _(info)
+        .set('stops', stops.items)
+        .set('stop_sequence', stopSequence.items)
+        .set('runs', runs.items)
+        .value()
+}
+
+
+// exports
 
 exports.list = function(agencyId) {
     return request
@@ -19,9 +64,12 @@ exports.list = function(agencyId) {
 
 
 exports.get = function(agencyId, routeId) {
-    return request
-        .get(baseURL + '/agencies/' + agencyId + '/routes/' + routeId + '/')
-        .promise()
-        .then(request.callback.onResponse)
-        .catch(request.callback.onError)
+    return Promise.resolve([
+        getInfo(agencyId, routeId),
+        getStops(agencyId, routeId),
+        getStopSequence(agencyId, routeId),
+        getRuns(agencyId, routeId)
+    ])
+    .all()
+    .spread(merge)
 }
