@@ -44,13 +44,6 @@ let getPath = builder.build()
     .value
 
 
-let resources = builder.build()
-    .cascade('agency', (agency) => (opts) => { opts.agency = agency })
-    .cascade('route', (route) => (opts) => { opts.route = route })
-    .cascade('stop', (stop) => (opts) => { opts.stop = stop })
-    .cascade('vehicle', (vehicle) => (opts) => { opts.vehicle = vehicle })
-
-
 module.exports = {
     list: () => listPath({}),
     get: () => getPath({})

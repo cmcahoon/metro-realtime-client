@@ -31,35 +31,39 @@ program
     .option('--raw', 'print raw json instead of pretty printing')
 
 program
-    .command('agencies [id]')
-    .description('get all or a specific agency')
-    .action(function(id, options) {
-        if (_.isNil(id)) {
-            client.list().agencies()
-            .then((agency) => console.json(agency))
-            .catch((err) => console.error('ERROR: failed to list agencies:', err))
-        }
-        else {
-            client.get().agency(id)
-            .then((agency) => console.json(agency))
-            .catch((err) => console.error('ERROR: failed to get agency:', err))
-        }
+    .command('list-agencies')
+    .description('get a list of agencies')
+    .action(function(options) {
+        client.list().agencies()
+        .then((agency) => console.json(agency))
+        .catch((err) => console.error('ERROR: failed to list agencies:', err))
     })
 
 program
-    .command('routes <agency> [id]')
-    .description('list routes for a specific agency')
+    .command('get-agency <id>')
+    .description('get information about a specific agency')
+    .action(function(id, options) {
+        client.get().agency(id)
+        .then((agency) => console.json(agency))
+        .catch((err) => console.error('ERROR: failed to get agency:', err))
+    })
+
+program
+    .command('list-routes <agency>')
+    .description('get a list of routes for a specific agency')
+    .action(function(agency, options) {
+        client.list().fromAgency(agency).routes()
+        .then((routes) => console.json(routes))
+        .catch((err) => console.error('ERROR: failed to list routes:', err))
+    })
+
+program
+    .command('get-route <agency> <id>')
+    .description('get information about a specific routes')
     .action(function(agency, id, options) {
-        if (_.isNil(id)) {
-            client.list().fromAgency(agency).routes()
-            .then((routes) => console.json(routes))
-            .catch((err) => console.error('ERROR: failed to list routes:', err))
-        }
-        else {
-            client.get().fromAgency(agency).route(id)
-            .then((route) => console.json(route))
-            .catch((err) => console.error('ERROR: failed to get route:', err))
-        }
+        client.get().fromAgency(agency).route(id)
+        .then((route) => console.json(route))
+        .catch((err) => console.error('ERROR: failed to get route:', err))
     })
 
 program
@@ -81,8 +85,8 @@ program
     })
 
 program
-    .command('vehicles <agency>')
-    .description('list vehicles for a specific agency')
+    .command('list-vehicles <agency>')
+    .description('get a list of vehicles for a specific agency')
     .action(function(agency, options) {
         client.list().fromAgency(agency).vehicles()
         .then((vehicles) => console.json(vehicles))

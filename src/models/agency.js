@@ -3,10 +3,6 @@
 const _ = require('lodash')
 const baseURL = require('../constants').baseEndpointURL
 let request = require('../request')
-let models = {
-    route: require('./route'),
-    vehicle: require('./vehicle')
-}
 
 
 exports.list = function() {
