@@ -85,10 +85,10 @@ program
     })
 
 program
-    .command('list-vehicles <agency>')
+    .command('list-vehicles <agency> [route]')
     .description('get a list of vehicles for a specific agency')
-    .action(function(agency, options) {
-        client.list().fromAgency(agency).vehicles()
+    .action(function(agency, route, options) {
+        client.list().fromAgency(agency).onRoute(route).vehicles()
         .then((vehicles) => console.json(vehicles))
         .catch((err) => console.error('ERROR: failed to list vehicles:', err))
     })

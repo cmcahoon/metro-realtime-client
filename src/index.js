@@ -24,7 +24,7 @@ let listPath = builder.build()
         if (!context.agency || !context.route) return Promise.reject('an agency and route must be provided')
         return models.stop.list(context.agency, context.route)
     })
-    .unwrap('vehicles', () => (context) => models.vehicle.list())
+    .unwrap('vehicles', () => (context) => models.vehicle.list(context.agency, context.route))
     .value
 
 
