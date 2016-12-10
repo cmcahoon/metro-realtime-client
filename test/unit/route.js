@@ -3,7 +3,7 @@
 const _ = require('lodash')
 let chai = require('./chai')
 let route = require('../../src/models/route')
-let baseURL = require('../../src/constants.js').baseEndpointURL
+let baseURL = require('../../src/constants').baseEndpointURL
 
 // setup mocks
 

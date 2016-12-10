@@ -2,7 +2,7 @@
 
 let chai = require('./chai')
 let agency = require('../../src/models/agency')
-let baseURL = require('../../src/constants.js').baseEndpointURL
+let baseURL = require('../../src/constants').baseEndpointURL
 
 // setup mocks
 

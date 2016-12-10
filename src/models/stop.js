@@ -55,6 +55,9 @@ function merge(info, routes, messages, predictions) {
 // exports
 
 exports.list = function(agencyId, routeId) {
+    if (_.isNil(agencyId) || _.isNil(routeId))
+        return Promise.reject('an agency and route must be specified')
+
     return request
         .get(baseURL + '/agencies/' + agencyId + '/routes/' + routeId + '/stops/')
         .promise()
@@ -65,6 +68,9 @@ exports.list = function(agencyId, routeId) {
 
 
 exports.get = function(agencyId, stopId) {
+    if (_.isNil(agencyId) || _.isNil(stopId))
+        return Promise.reject('an agency and stop must be specified')
+
     return Promise.resolve([
         getInfo(agencyId, stopId),
         getRoutes(agencyId, stopId),
