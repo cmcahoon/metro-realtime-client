@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:unit": "mocha test/unit",
-    "coverage:unit": "istanbul cover _mocha -- test/unit/ -R spec"
+    "coverage:unit": "istanbul cover --root src _mocha -- test/unit/ -R spec"
   },
   "repository": {
     "type": "git",
