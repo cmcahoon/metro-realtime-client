@@ -4,7 +4,8 @@
   "description": "Basic JS client for LA's Metro Realtime APIs.",
   "main": "index.js",
   "scripts": {
-    "test:unit": "mocha test/unit"
+    "test:unit": "mocha test/unit",
+    "coverage:unit": "istanbul cover _mocha -- test/unit/ -R spec"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
     "superagent-mocker": "^0.5.2"
   }
