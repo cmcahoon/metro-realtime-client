@@ -16,14 +16,8 @@ let listPath = builder.build()
     .cascade('onRoute', (route) => (context) => { context.route = route })
     // terminators
     .unwrap('agencies', () => (context) => models.agency.list())
-    .unwrap('routes', () => (context) => {
-        if (!context.agency) return Promise.reject('an agency must be provided')
-        return models.route.list(context.agency)
-    })
-    .unwrap('stops', () => (context) => {
-        if (!context.agency || !context.route) return Promise.reject('an agency and route must be provided')
-        return models.stop.list(context.agency, context.route)
-    })
+    .unwrap('routes', () => (context) => models.route.list(context.agency))
+    .unwrap('stops', () => (context) => models.stop.list(context.agency, context.route))
     .unwrap('vehicles', () => (context) => models.vehicle.list(context.agency, context.route))
     .value
 
@@ -33,14 +27,8 @@ let getPath = builder.build()
     .cascade('fromAgency', (agency) => (context) => { context.agency = agency })
     // terminators
     .unwrap('agency', (agency) => (context) => models.agency.get(agency))
-    .unwrap('route', (route) => (context) => {
-        if (!context.agency) return Promise.reject('an agency must be provided')
-        return models.route.get(context.agency, route)
-    })
-    .unwrap('stop', (stop) => (context) => {
-        if (!context.agency) return Promise.reject('an agency must be provided')
-        return models.stop.get(context.agency, stop)
-    })
+    .unwrap('route', (route) => (context) => models.route.get(context.agency, route))
+    .unwrap('stop', (stop) => (context) => models.stop.get(context.agency, stop))
     .value
 
 
