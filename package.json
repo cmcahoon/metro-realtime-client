@@ -12,7 +12,8 @@
     "test:unit": "mocha test/unit",
     "pretest": "npm run compile && npm run test:unit",
     "test": "echo 'testing complete!'",
-    "coverage:unit": "istanbul cover --root src _mocha -- test/unit/ -R spec"
+    "coverage:unit": "istanbul cover --root src _mocha -- test/unit/ -R spec",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
