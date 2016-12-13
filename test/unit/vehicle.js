@@ -1,8 +1,8 @@
 'use strict'
 
 let chai = require('./chai')
-let vehicle = require('../../src/models/vehicle')
-let baseURL = require('../../src/constants').baseEndpointURL
+let vehicle = require('../../lib/models/vehicle')
+let baseURL = require('../../lib/constants').baseEndpointURL
 
 
 // setup mocks

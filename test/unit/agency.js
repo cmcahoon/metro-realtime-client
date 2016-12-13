@@ -1,8 +1,8 @@
 'use strict'
 
 let chai = require('./chai')
-let agency = require('../../src/models/agency')
-let baseURL = require('../../src/constants').baseEndpointURL
+let agency = require('../../lib/models/agency')
+let baseURL = require('../../lib/constants').baseEndpointURL
 
 
 // setup mocks

@@ -8,16 +8,16 @@ let sinon = require('sinon')
 
 // use 'rewire' to help with mocking
 
-let client = rewire('../../src/index')
+let client = rewire('../../lib/index')
 
 
 // setup mocks
 
 let models = {
-    agency: require('../../src/models/agency'),
-    route: require('../../src/models/route'),
-    stop: require('../../src/models/stop'),
-    vehicle: require('../../src/models/vehicle')
+    agency: require('../../lib/models/agency'),
+    route: require('../../lib/models/route'),
+    stop: require('../../lib/models/stop'),
+    vehicle: require('../../lib/models/vehicle')
 }
 
 
