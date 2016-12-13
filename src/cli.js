@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict'
 
 const _ = require('lodash')
@@ -10,7 +12,6 @@ let models = {
     stop: require('./models/stop'),
     vehicle: require('./models/vehicle')
 }
-
 
 
 let prettyPrint = true

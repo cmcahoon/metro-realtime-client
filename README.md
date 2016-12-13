@@ -4,6 +4,12 @@ responses from the API.
 
 [Metro Realtime API Overview](http://developer.metro.net/introduction/realtime-api-overview/)
 
+## Installation
+
+```bash
+npm install metro-realtime-client
+```
+
 ## Usage
 
 The client has two functions:  `list` and `get`. Each lead to a fluent interface
@@ -35,7 +41,8 @@ client.get().fromAgency('lametro').stop('90')                   // get details a
 
 ## CLI
 
-A very basic CLI exists to make it easy to play with from the command line.
+A very basic CLI exists to make it easy to play with from the command line. It is
+installed in `node_modules/.bin/metro-realtime-cli`.
 
 ```
 Usage: cli [options] [command]

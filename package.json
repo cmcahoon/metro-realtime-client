@@ -2,6 +2,9 @@
   "name": "metro-realtime-client",
   "version": "0.1.0",
   "description": "Low level client for LA's Metro Realtime APIs.",
+  "bin": {
+    "metro-realtime-cli": "lib/cli.js"
+  },
   "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf lib",
@@ -15,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/cwongprice/metro-realtime-client.git"
   },
-  "author": "",
+  "author": "cwongprice@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cwongprice/metro-realtime-client/issues"
