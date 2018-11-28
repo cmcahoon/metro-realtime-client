@@ -1,6 +1,6 @@
 {
   "name": "metro-realtime-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Low level client for LA's Metro Realtime APIs.",
   "bin": {
     "metro-realtime-cli": "lib/cli.js"
@@ -19,14 +19,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cwongprice/metro-realtime-client.git"
+    "url": "https://gitlab.com/cmcahoon/metro-realtime-client"
   },
   "author": "cwongprice@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cwongprice/metro-realtime-client/issues"
+    "url": "https://gitlab.com/cmcahoon/metro-realtime-client/issues"
   },
-  "homepage": "https://github.com/cwongprice/metro-realtime-client#readme",
   "dependencies": {
     "bluebird": "^3.4.6",
     "bunyan": "^1.8.5",
