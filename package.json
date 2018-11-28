@@ -14,7 +14,7 @@
     "test": "echo 'testing complete!'",
     "coverage:unit": "istanbul cover --root src _mocha -- test/unit/ -R spec",
     "prerelease": "npm run test",
-    "release": "standard-version",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
