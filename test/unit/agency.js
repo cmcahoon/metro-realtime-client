@@ -10,10 +10,16 @@ let baseURL = require('../../lib/constants').baseEndpointURL
 let mock = require('./mock')
 
 const response = {
-    body: {
-        id: 'test_agency',
-        display_name: 'Test Agency'
-    }
+    body: [
+        {
+            id: 'test_agency',
+            display_name: 'Test Agency'
+        },
+        {
+            id: 'another_test_agency',
+            display_name: 'Another Test Agency'
+        }
+    ]
 }
 
 
@@ -32,12 +38,12 @@ describe('the agency model', function() {
 
     it('should be able to get a specific agency by id', function() {
         mock.get(baseURL + '/agencies/', function() { return response })
-        return agency.get(response.body.id).should.eventually.equal(response.body)
+        return agency.get(response.body[1].id).should.eventually.equal(response.body[1])
     })
 
     it('should return an error if you try to get an agency that does not exist', function() {
         mock.get(baseURL + '/agencies/', function() { return response })
-        return agency.get('does-not-exist').should.eventually.be.rejectedWith('requested agency does not exist')
+        return agency.get('does-not-exist').should.eventually.be.rejectedWith('Agency not found')
     })
 
 })
