@@ -36,6 +36,7 @@
     "superagent-bluebird-promise": "^4.1.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.119",
     "@types/node": "6",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
@@ -45,6 +46,7 @@
     "sinon": "^1.17.6",
     "standard-version": "^4.0.0",
     "superagent-mocker": "^0.5.2",
+    "tslint": "^5.11.0",
     "typescript": "^3.2.2"
   }
 }
