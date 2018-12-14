@@ -44,7 +44,7 @@ describe('the vehicle model', function() {
     })
 
     it('should return an error if you try to list vehicles without an agency', function() {
-        return vehicle.list().should.eventually.be.rejectedWith('an agency must be specified')
+        return vehicle.list().should.eventually.be.rejectedWith('An agency must be specified.')
     })
 
 })
