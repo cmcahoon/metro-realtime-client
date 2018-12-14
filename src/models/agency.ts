@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 import { baseEndpointURL } from "../constants";
-import * as request from "../request";
+import { request } from "../request";
 
 interface IAgency {
     id: string;
