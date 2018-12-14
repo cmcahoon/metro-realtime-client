@@ -91,7 +91,7 @@ describe('the route model', function() {
     })
 
     it('should return an error if you try to list routes without specifying an agency', function() {
-        return route.list().should.eventually.be.rejectedWith('an agency must be specified')
+        return route.list().should.eventually.be.rejectedWith('An agency must be specified.')
     })
 
     it('should be able to get a specific route by id', function() {
@@ -112,7 +112,7 @@ describe('the route model', function() {
     })
 
     it('should return an error if you try to get a route without specifying an agency and route', function() {
-        return route.get().should.eventually.be.rejectedWith('an agency and route must be specified')
+        return route.get().should.eventually.be.rejectedWith('An agency and route must be specified.')
     })
 
 })
