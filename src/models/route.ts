@@ -29,7 +29,7 @@ interface IRun {
     direction_name: string;
 }
 
-// TODO: This does not feel like the level do this at
+// TODO: This does not feel right
 interface IFullRoute extends IRouteInfo {
     stops: IStop[];
     stop_sequence: IStop[];
@@ -116,6 +116,7 @@ function list(agencyId: string): Promise<IRoute[]> {
 }
 
 export {
+    IRoute,
     get,
     list,
 };

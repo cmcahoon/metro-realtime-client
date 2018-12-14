@@ -74,7 +74,7 @@ const getPredictionsResponse = {
 const fullGetResponse = _.chain(getInfoResponse.body)
     .clone()
     .set('routes', getRoutesResponse.body.items)
-    .set('messages', getMessagesResponse.body.items)
+    // .set('messages', getMessagesResponse.body.items)
     .set('predictions', getPredictionsResponse.body.items)
     .value()
 
@@ -96,7 +96,7 @@ describe('the stop model', function() {
     })
 
     it('should return an error if you try to list stops without specifying an agency', function() {
-        return stop.list().should.eventually.be.rejectedWith('an agency and route must be specified')
+        return stop.list().should.eventually.be.rejectedWith('An agency and route must be specified.')
     })
 
     it('should be able to get a specific stop by id', function() {
@@ -105,7 +105,7 @@ describe('the stop model', function() {
             switch (req.params.resource) {
                 case 'info': return getInfoResponse
                 case 'routes': return getRoutesResponse
-                case 'messages': return getMessagesResponse
+                // case 'messages': return getMessagesResponse
                 case 'predictions': return getPredictionsResponse
                 default: return { body: { items: [] } }
             }
@@ -114,7 +114,7 @@ describe('the stop model', function() {
     })
 
     it('should return an error if you try to get a stop without specifying an agency and stop', function() {
-        return stop.get().should.eventually.be.rejectedWith('an agency and stop must be specified')
+        return stop.get().should.eventually.be.rejectedWith('An agency and stop must be specified.')
     })
 
 })
