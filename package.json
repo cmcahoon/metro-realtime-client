@@ -9,9 +9,10 @@
   "scripts": {
     "clean": "rm -rf lib",
     "compile": "tsc",
-    "test:unit": "mocha test/unit",
-    "pretest": "yarn run compile && yarn run test:unit",
-    "test": "echo 'testing complete!'",
+    "test:unit-mocha": "mocha test/unit",
+    "test:unit-jest": "jest",
+    "pretest": "yarn run compile",
+    "test": "yarn run test:unit-mocha && yarn run test:unit-jest",
     "coverage:unit": "istanbul cover --root src _mocha -- test/unit/ -R spec",
     "prerelease": "yarn run test",
     "release": "standard-version"
@@ -35,16 +36,19 @@
     "superagent-bluebird-promise": "^4.1.0"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.10",
     "@types/lodash": "^4.14.119",
     "@types/node": "6",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "istanbul": "^0.4.5",
+    "jest": "^23.6.0",
     "mocha": "^3.2.0",
     "rewire": "^2.5.2",
     "sinon": "^1.17.6",
     "standard-version": "^4.0.0",
     "superagent-mocker": "^0.5.2",
+    "ts-jest": "^23.10.5",
     "tslint": "^5.11.0",
     "typescript": "^3.2.2"
   }
