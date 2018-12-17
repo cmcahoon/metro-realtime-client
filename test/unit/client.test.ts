@@ -77,6 +77,8 @@ describe("The realtime client", function() {
         await client.list().fromAgency("foo").onRoute("bar").vehicles();
         expect(spy).toHaveBeenCalledTimes(1);
         expect(spy).toHaveBeenCalledWith("foo", "bar");
+
+        spy.mockRestore();
     });
 
     it("should return an error when requesting vehicles without specifying an agency", async () => {
@@ -90,6 +92,8 @@ describe("The realtime client", function() {
         await client.get().agency("foo");
         expect(spy).toHaveBeenCalledTimes(1);
         expect(spy).toHaveBeenCalledWith("foo");
+
+        spy.mockRestore();
     });
 
     it("should return an error when requesting an agency without specifying an agency", async () => {
@@ -103,6 +107,8 @@ describe("The realtime client", function() {
         await client.get().fromAgency("foo").route("bar");
         expect(spy).toHaveBeenCalledTimes(1);
         expect(spy).toHaveBeenCalledWith("foo", "bar");
+
+        spy.mockRestore();
     });
 
     it("should return an error when requesting a route without specifying an agency and route", async () => {
@@ -118,6 +124,8 @@ describe("The realtime client", function() {
         await client.get().fromAgency("foo").stop("bar");
         expect(spy).toHaveBeenCalledTimes(1);
         expect(spy).toHaveBeenCalledWith("foo", "bar");
+
+        spy.mockRestore();
     });
 
     it("should return an error when requesting a stop without specifying an agency and stop", async () => {
