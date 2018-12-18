@@ -6,6 +6,7 @@
     "metro-realtime-cli": "lib/cli.js"
   },
   "main": "lib/index.js",
+  "types": "lib/index.js.ts",
   "scripts": {
     "clean": "rm -rf lib",
     "compile": "tsc",
