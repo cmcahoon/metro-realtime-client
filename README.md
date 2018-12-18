@@ -7,19 +7,17 @@ responses from the API.
 ## Installation
 
 ```bash
-npm install metro-realtime-client
+yarn install metro-realtime-client
 ```
 
 ## Usage
 
-The client has two functions:  `list` and `get`. Each lead to a fluent interface
-that allows the caller to set context and then end with the desired resource type.
-
+All functions export a Promise that can be used then `.then` or `async/await`.
 ```javascript
 var client = require('metro-realtime-client')
 
-// list resources
-client.list().agencies()                                        // agencies
+// All functions return a Promise...
+client.listAgencies()
 .then((agencies) => {
     // all calls to the client return a promise...
 })
@@ -27,16 +25,21 @@ client.list().agencies()                                        // agencies
     // ...
 })
 
-client.list().fromAgency('lametro').routes()                    // all agency routes
-client.list().fromAgency('lametro').onRoute('950').stops()      // all stops on route 950
-client.list().fromAgency('lametro').vehicles()                  // all agency vehicles
-client.list().fromAgency('lametro').onRoute('950').vehicles()   // all vehicles on route 950
+// ...so async/await works as well
+const agencies = await client.listAgencies()
+```
+```javascript
+// Multiple entity getters
+client.listAgencies()
+client.listRoutes("lametro")
+client.listStops("lametro")
+client.listVehicles("lametro")         // All vehicles for the entire agency
+client.listVehicles("lametro", "901")  // All vehicles for a specific route
 
-
-// get a specific resource
-client.get().agency('lametro')                                  // get 'lametro' agency
-client.get().fromAgency('lametro').route('950')                 // get details about route 950
-client.get().fromAgency('lametro').stop('90')                   // get details about stop 90
+// Single entity getters
+client.getAgency("lametro")
+client.getRoute("lametro", "901")
+client.getStop("lametro", "15436")
 ```
 
 ## CLI
@@ -68,6 +71,5 @@ Options:
 ## Tests
 
 ```bash
-npm run test        # all test types
-npm run test:unit   # just unit tests
+yarn run test
 ```
