@@ -38,7 +38,6 @@
     "@types/lodash": "^4.14.119",
     "@types/node": "6",
     "jest": "^23.6.0",
-    "rewire": "^2.5.2",
     "standard-version": "^4.0.0",
     "superagent-mocker": "^0.5.2",
     "ts-jest": "^23.10.5",
