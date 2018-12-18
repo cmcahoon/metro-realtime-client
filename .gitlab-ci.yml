@@ -4,7 +4,11 @@ cache:
   paths:
     - node_modules/
 
-test_async:
+test:
+  stage: test
   script:
     - yarn
     - yarn test
+  artifacts:
+    paths:
+      - coverage/

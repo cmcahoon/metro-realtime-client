@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rm -rf lib",
     "compile": "tsc",
-    "test:unit": "jest",
+    "test:unit": "jest --coverage",
     "pretest": "yarn run compile",
     "test": "yarn run test:unit",
     "prerelease": "yarn run test",
