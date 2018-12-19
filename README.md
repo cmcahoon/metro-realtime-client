@@ -1,3 +1,5 @@
+# metro-realtime-client ![build](https://gitlab.com/cmcahoon/metro-realtime-client/badges/master/build.svg)![coverage](https://gitlab.com/cmcahoon/metro-realtime-client/badges/master/coverage.svg?job=coverage)
+
 Los Angeles Metro provides a RESTful API to retrieve realtime positions of their
 bus fleet. This is a low level client that does very little transformation on the
 responses from the API.
