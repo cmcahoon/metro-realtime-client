@@ -1,6 +1,6 @@
 {
   "name": "metro-realtime-client",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "description": "Low level client for LA's Metro Realtime APIs.",
   "bin": {
     "metro-realtime-cli": "lib/cli.js"

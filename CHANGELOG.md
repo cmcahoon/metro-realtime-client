@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://gitlab.com/cmcahoon/metro-realtime-client/compare/v0.1.5...v1.0.0) (2018-12-19)
+
+
+### Bug Fixes
+
+* Restore mock objects to original state after each test. ([49f4618](https://gitlab.com/cmcahoon/metro-realtime-client/commit/49f4618))
+
+
+### Features
+
+* Removed fluent interface. ([0a9f868](https://gitlab.com/cmcahoon/metro-realtime-client/commit/0a9f868))
+
+
+### BREAKING CHANGES
+
+* Removed the fluent interface in favor of a standard, function-based interface.
+
+The fluent interface was nice, but the library was a bit hard to follow after not looking at
+the project for a few years. I'm moving to a regular, function-based interface for the sake
+of simplicity.
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://gitlab.com/cmcahoon/metro-realtime-client/compare/v0.1.4...v0.1.5) (2018-11-28)
 
