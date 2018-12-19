@@ -4,7 +4,9 @@ cache:
   paths:
     - node_modules/
 
-test_async:
+test:
+  stage: test
   script:
     - yarn
     - yarn test
+  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
