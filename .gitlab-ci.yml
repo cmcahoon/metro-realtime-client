@@ -10,6 +10,3 @@ test:
     - yarn
     - yarn test
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
-  artifacts:
-    paths:
-      - coverage/
