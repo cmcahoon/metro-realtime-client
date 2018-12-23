@@ -3,7 +3,8 @@
   "version": "1.0.1",
   "description": "Low level client for LA's Metro Realtime APIs.",
   "main": "lib/index.js",
-  "types": "lib/index.js.ts",
+  "types": "lib/index.d.ts",
+  "files": ["lib/**/*"],
   "scripts": {
     "clean": "rm -rf lib",
     "compile": "tsc",
