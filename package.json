@@ -14,7 +14,8 @@
     "pretest": "yarn run compile",
     "test": "yarn run test:unit",
     "prerelease": "yarn run test",
-    "release": "standard-version"
+    "release": "standard-version",
+    "prepublish": "yarn run compile"
   },
   "repository": {
     "type": "git",
