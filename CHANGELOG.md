@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.1"></a>
+## [1.0.1](https://gitlab.com/cmcahoon/metro-realtime-client/compare/v1.0.0...v1.0.1) (2018-12-23)
+
+
+### Bug Fixes
+
+* Add compilation prerequisite to publishing. ([ba84465](https://gitlab.com/cmcahoon/metro-realtime-client/commit/ba84465))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://gitlab.com/cmcahoon/metro-realtime-client/compare/v0.1.5...v1.0.0) (2018-12-19)
 
