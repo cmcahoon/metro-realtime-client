@@ -31,5 +31,6 @@ function list(agency: string, route?: string): Promise<IVehicle[]> {
 }
 
 export {
+    IVehicle,
     list,
 };

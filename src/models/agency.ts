@@ -26,6 +26,7 @@ function list(): Promise<IAgency[]> {
 }
 
 export {
+    IAgency,
     get,
     list,
 };
