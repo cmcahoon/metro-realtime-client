@@ -116,6 +116,7 @@ function list(agencyId: string): Promise<IRoute[]> {
 }
 
 export {
+    IFullRoute,
     IRoute,
     get,
     list,

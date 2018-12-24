@@ -66,7 +66,7 @@ function getPredictions(agencyId: string, stopId: string): Promise<IPrediction[]
 
 // transformers
 
-function merge(info: IStop, routes: IRoute[], predictions: IPrediction[]) {
+function merge(info: IStop, routes: IRoute[], predictions: IPrediction[]): IFullStop {
     const mergedStop = {
         ...info,
     } as IFullStop;
@@ -78,7 +78,7 @@ function merge(info: IStop, routes: IRoute[], predictions: IPrediction[]) {
 
 // exports
 
-async function get(agencyId: string, stopId: string) {
+async function get(agencyId: string, stopId: string): Promise<IFullStop> {
     if (_.isNil(agencyId) || _.isNil(stopId)) {
         return Promise.reject("An agency and stop must be specified.");
     }
@@ -105,6 +105,8 @@ function list(agencyId: string, routeId: string): Promise<IStopWithLocation[]> {
 }
 
 export {
+    IFullStop,
+    IStopWithLocation,
     get,
     list,
 };
