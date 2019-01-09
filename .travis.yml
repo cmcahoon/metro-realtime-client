@@ -4,3 +4,8 @@ env:
 language: node_js
 node_js:
 - 'lts/dubnium'
+install:
+  - yarn install
+scripts:
+  - yarn test
+  - yarn codecov -f coverage/*.json
