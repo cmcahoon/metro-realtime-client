@@ -1,6 +1,6 @@
 {
   "name": "metro-realtime-client",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Low level client for LA's Metro Realtime APIs.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
