@@ -8,12 +8,12 @@
     "lib/**/*"
   ],
   "scripts": {
-    "clean": "rm -rf lib",
+    "clean": "rm -rf lib coverage junit.xml",
     "compile": "tsc",
     "pretest:unit": "yarn run compile",
     "test:unit": "jest --ci --coverage",
     "pretest:ci": "yarn run compile",
-    "test:ci": "jest --ci --coverage --reporters=jest-junit",
+    "test:ci": "jest --ci --coverage --reporters=jest-junit --coverageReporters=cobertura",
     "test": "yarn run test:unit",
     "prerelease": "yarn run test",
     "release": "standard-version",
