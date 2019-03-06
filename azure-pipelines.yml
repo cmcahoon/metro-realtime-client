@@ -16,5 +16,11 @@ steps:
     displayName: "Install dependencies"
 
   - script: |
-      yarn test
+      yarn test:ci
     displayName: "Run tests"
+
+  - task: PublishTestResults@2
+    condition: succeeded()
+    inputs:
+      testRunner: JUnit
+      testResultsFile: "**/junit.xml"
