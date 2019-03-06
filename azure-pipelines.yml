@@ -24,9 +24,11 @@ steps:
     inputs:
       testRunner: JUnit
       testResultsFiles: "**/junit.xml"
+    displayName: "Publish test results"
 
   - task: PublishCodeCoverageResults@1
     condition: succeeded()
     inputs:
       codeCoverageTool: Cobertura
       summaryFileLocation: "./coverage/cobertura-coverage.xml"
+    displayName: "Publish test coverage"

@@ -1,10 +1,9 @@
 # metro-realtime-client
 
-[![Build Status](https://dev.azure.com/me0571/LA%20Metro/_apis/build/status/cmcahoon.metro-realtime-client?branchName=master)](https://dev.azure.com/me0571/LA%20Metro/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/me0571/metro/_apis/build/status/cmcahoon.metro-realtime-client?branchName=master)](https://dev.azure.com/me0571/metro/_build/latest?definitionId=1&branchName=master)
 &nbsp;
-[![Build Status](https://travis-ci.org/cmcahoon/metro-realtime-client.svg?branch=master)](https://travis-ci.org/cmcahoon/metro-realtime-client)
+[![Azure DevOps coverage (branch)](https://img.shields.io/azure-devops/coverage/me0571/metro/1/master.svg)](https://dev.azure.com/me0571/metro/_build/latest?definitionId=1&branchName=master&view=results)
 &nbsp;
-[![Test Coverage](https://api.codeclimate.com/v1/badges/5ef9410707997a2b27de/test_coverage)](https://codeclimate.com/github/cmcahoon/metro-realtime-client/test_coverage)
 
 Los Angeles Metro provides a RESTful API to retrieve realtime positions of their
 bus fleet. This is a low level client that does very little transformation on the
