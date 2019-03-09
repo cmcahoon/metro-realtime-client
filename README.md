@@ -2,8 +2,6 @@
 
 [![Build Status](https://dev.azure.com/me0571/metro/_apis/build/status/cmcahoon.metro-realtime-client?branchName=master)](https://dev.azure.com/me0571/metro/_build/latest?definitionId=1&branchName=master)
 &nbsp;
-[![Azure DevOps coverage (branch)](https://img.shields.io/azure-devops/coverage/me0571/metro/1/master.svg)](https://dev.azure.com/me0571/metro/_build/latest?definitionId=1&branchName=master&view=results)
-&nbsp;
 
 Los Angeles Metro provides a RESTful API to retrieve realtime positions of their
 bus fleet. This is a low level client that does very little transformation on the
