@@ -10,3 +10,7 @@ jobs:
           command: |
             yarn install
             yarn compile
+      - run:
+          name: Run Tests
+          command: |
+            yarn test:ci
