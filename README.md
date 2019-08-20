@@ -1,6 +1,8 @@
 # metro-realtime-client
 
-[![Build Status](https://dev.azure.com/me0571/metro/_apis/build/status/cmcahoon.metro-realtime-client?branchName=master)](https://dev.azure.com/me0571/metro/_build/latest?definitionId=1&branchName=master)
+[![CircleCI](https://circleci.com/gh/cmcahoon/metro-realtime-client/tree/master.svg?style=svg)](https://circleci.com/gh/cmcahoon/metro-realtime-client/tree/master)
+&nbsp;
+[![codecov](https://codecov.io/gh/cmcahoon/metro-realtime-client/branch/master/graph/badge.svg)](https://codecov.io/gh/cmcahoon/metro-realtime-client)
 &nbsp;
 
 Los Angeles Metro provides a RESTful API to retrieve realtime positions of their
