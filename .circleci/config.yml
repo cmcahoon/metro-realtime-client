@@ -14,3 +14,5 @@ jobs:
           name: Run Tests
           command: |
             yarn test:ci
+      - store_test_results:
+          path: test-results

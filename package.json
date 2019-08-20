@@ -8,7 +8,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "clean": "rm -rf lib coverage junit.xml",
+    "clean": "rm -rf lib coverage test-results",
     "compile": "tsc",
     "pretest:unit": "yarn run compile",
     "test:unit": "jest --ci --coverage",
@@ -45,5 +45,8 @@
     "ts-jest": "^23.10.5",
     "tslint": "^5.11.0",
     "typescript": "^3.2.2"
+  },
+  "jest-junit": {
+    "outputDirectory": "test-results/jest"
   }
 }
