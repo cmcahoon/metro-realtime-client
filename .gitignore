@@ -1,5 +1,6 @@
 coverage
 lib
 node_modules
+test-results/
 yarn-error.log
 .idea
